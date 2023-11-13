@@ -1,17 +1,30 @@
-int sx = int(random(350));
-int sy = int(random(350));
-int sw = int(random(50));
-int sh = int(random(50));
-boolean in = false;
 void setup() {
- size(400,400); 
+  size(400, 400); 
+
+  // Example usage
+  int px = mouseX; 
+  int py = mouseY; 
+  int rx = int(random(350));
+  int ry = int(random(350));
+  int rw = int(random(50)); 
+  int rh = int(random(50)); 
+
+  boolean pointInside = isPointInRect(px, py, rx, ry, rw, rh);
+  println("Point is inside the rectangle: " + pointInside);
 }
+
 void draw() {
-  println(in);
-  rect(sx,sy,sh,sw);
-  if (mouseX>sx && mouseX<sx+sh && mouseY>sy && mouseY<sy+sw){
-    in = true;
-  } else{
-    in = false; 
-  }
+  // Example dynamic check with mouse position
+  int rx = int(random(350)); 
+  int ry = int(random(350)); 
+  int rw = int(random(50)); 
+  int rh = int(random(50)); 
+
+  rect(rx, ry, rw, rh);
+  boolean pointInside = isPointInRect(mouseX, mouseY, rx, ry, rw, rh);
+  println("Mouse is inside the rectangle: " + pointInside);
+}
+
+boolean isPointInRect(int pointX, int pointY, int rectX, int rectY, int rectWidth, int rectHeight) {
+  return pointX > rectX && pointX < rectX + rectWidth && pointY > rectY && pointY < rectY + rectHeight;
 }
