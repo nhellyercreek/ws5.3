@@ -1,7 +1,5 @@
 void setup() {
   size(400, 400); 
-
-  // Example usage
   int px = mouseX; 
   int py = mouseY; 
   int rx = int(random(350));
