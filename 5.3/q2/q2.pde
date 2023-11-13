@@ -14,7 +14,6 @@ void setup() {
 }
 
 void draw() {
-  // Example dynamic check with mouse position
   int rx = int(random(350)); 
   int ry = int(random(350)); 
   int rw = int(random(50)); 
